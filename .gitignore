@@ -1,6 +1,8 @@
 test.out
 a.out
 .vscode
-*.o
-*/**/.o
+*/**/*.o
 miniRT
+*/**/*.a
+*/**/*.gen
+*/**/test
