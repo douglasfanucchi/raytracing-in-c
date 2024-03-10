@@ -24,7 +24,17 @@ MU_TEST(test_tuple_comparition) {
     mu_assert(tuplecmp(t1, t2) == 1, "Tuple t1 and t2 should be different. (t1 is a point, t2 is a vector)");
 }
 
+MU_TEST(test_tuple_addition) {
+    t_tuple *t1 = new_tuple(3.5, 2.9, 1, 0);
+    t_tuple *t2 = new_tuple(4, 5, 1, 1);
+    t_tuple *expected = new_tuple(7.5, 7.9, 2, 1);
+    t_tuple *result = tupleadd(t1, t2);
+
+    mu_assert(tuplecmp(expected, result) == 0, "result should be (7.5, 7.9, 2, 1)");
+}
+
 MU_TEST_SUITE(test_tuples) {
     MU_RUN_TEST(test_tuple_creation);
     MU_RUN_TEST(test_tuple_comparition);
+    MU_RUN_TEST(test_tuple_addition);
 }
