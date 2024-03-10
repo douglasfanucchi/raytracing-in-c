@@ -43,9 +43,25 @@ MU_TEST(test_tuple_addition) {
     );
 }
 
+MU_TEST(test_tuple_subtraction) {
+    t_tuple *t1 = new_tuple(3.5, 2.9, 1, 0);
+    t_tuple *t2 = new_tuple(4, 5, 1, 1);
+    t_tuple *expected = new_tuple(-0.5, -2.1, 0, -1);
+    t_tuple *result = tuplesub(t1, t2);
+
+    mu_assert(tuplecmp(expected, result) == 0, "result should be (-0.5, -2.1, 0, -1)");
+
+    t_point *p1 = new_point(4.5, 3.5, 1);
+    t_point *p2 = new_point(0, 0, 0);
+    t_vector *expected_vector = new_vector(4.5, 3.5, 1);
+    t_vector *result_vector = tuplesub(p2, p1);
+
+    mu_assert(tuplecmp(expected_vector, result_vector), "result vector should be (4.5, 3.5, 1)");
+}
 
 MU_TEST_SUITE(test_tuples) {
     MU_RUN_TEST(test_tuple_creation);
     MU_RUN_TEST(test_tuple_comparition);
     MU_RUN_TEST(test_tuple_addition);
+    MU_RUN_TEST(test_tuple_subtraction);
 }
