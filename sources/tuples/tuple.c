@@ -11,3 +11,22 @@ t_tuple *new_tuple(float x, float y, float z, float w)
     result[3] = w;
     return result;
 }
+
+char tuplecmp(t_tuple *t1, t_tuple *t2)
+{
+    char result;
+    int  i;
+
+    result = 0;
+    i = 0;
+
+    while(i < 4)
+    {
+        if (fabs(t1[i] - t2[i]) > EPSILON) {
+            result = 1;
+            break;
+        }
+        i++;
+    }
+    return (result);
+}
