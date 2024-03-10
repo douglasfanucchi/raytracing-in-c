@@ -56,3 +56,14 @@ t_tuple *tuplesub(t_tuple *t1, t_tuple *t2)
     );
     return result;
 }
+
+t_tuple *tuple_opposite(t_tuple *tuple)
+{
+    t_tuple *zero;
+    t_tuple *result;
+
+    zero = new_tuple(0, 0, 0, 0);
+    result = tuplesub(zero, tuple);
+    free(zero);
+    return result;
+}
