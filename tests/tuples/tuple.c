@@ -57,6 +57,20 @@ MU_TEST(test_tuple_subtraction) {
     t_vector *result_vector = tuplesub(p2, p1);
 
     mu_assert(tuplecmp(expected_vector, result_vector), "result vector should be (4.5, 3.5, 1)");
+
+    t_vector *vector = new_vector(1, 1, 1);
+    t_point *p = new_point(4.5, 3.5, 1);
+    expected = new_point(3.5, 2.5, 0);
+    result = tuplesub(p, vector);
+
+    mu_assert(tuplecmp(expected, result) == 0, "Result should be a point with (3.5, 2.5, 0)");
+
+    t_vector *v1 = new_vector(3, 4, 5);
+    t_vector *v2 = new_vector(1, 2, 3);
+    expected = new_vector(2, 2, 2);
+    result = tuplesub(v1, v2);
+
+    mu_assert(tuplecmp(expected, result) == 0, "new vector should be (2, 2, 2)");
 }
 
 MU_TEST_SUITE(test_tuples) {
