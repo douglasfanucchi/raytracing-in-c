@@ -3,7 +3,7 @@ CC=cc
 FLAGS=-Wall -Wextra -Werror
 INCLUDES=-I ./includes/
  
-OBJS := tuples/tuple.o tuples/point.o
+OBJS := tuples/tuple.o tuples/point.o tuples/vector.o
 OBJS := $(addprefix sources/, $(OBJS))
 
 all: $(NAME)
