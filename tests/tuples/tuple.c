@@ -31,7 +31,18 @@ MU_TEST(test_tuple_addition) {
     t_tuple *result = tupleadd(t1, t2);
 
     mu_assert(tuplecmp(expected, result) == 0, "result should be (7.5, 7.9, 2, 1)");
+
+    t_point *origin = new_point(0, 0, 0);
+    t_vector *direction = new_vector(1, 1, 1);
+    t_point *expected_destination = new_point(1, 1, 1); 
+    t_point *destination = tupleadd(origin, direction);
+
+    mu_assert(
+        tuplecmp(expected_destination, destination) == 0,
+        "Destination should be (1, 1, 1)"
+    );
 }
+
 
 MU_TEST_SUITE(test_tuples) {
     MU_RUN_TEST(test_tuple_creation);
