@@ -73,9 +73,18 @@ MU_TEST(test_tuple_subtraction) {
     mu_assert(tuplecmp(expected, result) == 0, "new vector should be (2, 2, 2)");
 }
 
+MU_TEST(test_opposite_tuple) {
+    t_tuple *tuple = new_tuple(5, 1, 0, 1);
+    t_tuple *expected = new_tuple(-5, -1, 0, -1);
+    t_tuple *result = tuple_opposite(tuple);
+
+    mu_assert(tuplecmp(expected, result) == 0, "opposite tuple should be (-5, -1, 0, -1)");
+}
+
 MU_TEST_SUITE(test_tuples) {
     MU_RUN_TEST(test_tuple_creation);
     MU_RUN_TEST(test_tuple_comparition);
     MU_RUN_TEST(test_tuple_addition);
     MU_RUN_TEST(test_tuple_subtraction);
+    MU_RUN_TEST(test_opposite_tuple);
 }
