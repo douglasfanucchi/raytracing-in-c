@@ -4,6 +4,7 @@
 #include "tuples/point.c"
 #include "tuples/vector.c"
 #include "tuples/scalar.c"
+#include "tuples/magnitude.c"
 
 int	main()
 {
@@ -11,6 +12,7 @@ int	main()
 	MU_RUN_SUITE(test_point);
 	MU_RUN_SUITE(test_vectors);
 	MU_RUN_SUITE(test_scalar);
+	MU_RUN_SUITE(test_magnitude);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
