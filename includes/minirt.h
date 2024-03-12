@@ -14,6 +14,7 @@ t_tuple *tuplemultiply(t_tuple *tuple, float scalar);
 t_tuple *tupledivide(t_tuple *tuple, float scalar);
 t_tuple *tuple_opposite(t_tuple *tuple);
 t_tuple *new_point(float x, float y, float z);
+t_tuple *normalize(t_tuple *tuple);
 t_vector *new_vector(float x, float y, float z);
 char    tuplecmp(t_tuple *t1, t_tuple *t2);
 float magnitude(t_tuple *tuple);
