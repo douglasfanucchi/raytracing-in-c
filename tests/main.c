@@ -5,6 +5,7 @@
 #include "tuples/vector.c"
 #include "tuples/scalar.c"
 #include "tuples/magnitude.c"
+#include "tuples/normalize.c"
 
 int	main()
 {
@@ -13,6 +14,7 @@ int	main()
 	MU_RUN_SUITE(test_vectors);
 	MU_RUN_SUITE(test_scalar);
 	MU_RUN_SUITE(test_magnitude);
+	MU_RUN_SUITE(test_normalize);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
