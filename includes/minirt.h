@@ -2,6 +2,9 @@
 #include <math.h>
 
 #define EPSILON 1E-5
+#ifndef M_PI_4
+    #define M_PI_4 0.785398163397448309616
+#endif
 
 typedef float t_tuple;
 typedef t_tuple t_point;
@@ -18,3 +21,4 @@ t_tuple *normalize(t_tuple *tuple);
 t_vector *new_vector(float x, float y, float z);
 char    tuplecmp(t_tuple *t1, t_tuple *t2);
 float magnitude(t_tuple *tuple);
+float   dot(t_vector *v1, t_vector *v2);
