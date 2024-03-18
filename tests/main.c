@@ -6,6 +6,7 @@
 #include "tuples/scalar.c"
 #include "tuples/magnitude.c"
 #include "tuples/normalize.c"
+#include "tuples/dot.c"
 
 int	main()
 {
@@ -15,6 +16,7 @@ int	main()
 	MU_RUN_SUITE(test_scalar);
 	MU_RUN_SUITE(test_magnitude);
 	MU_RUN_SUITE(test_normalize);
+	MU_RUN_SUITE(test_dot_product);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
