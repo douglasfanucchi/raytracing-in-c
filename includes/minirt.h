@@ -22,3 +22,4 @@ t_vector *new_vector(float x, float y, float z);
 char    tuplecmp(t_tuple *t1, t_tuple *t2);
 float magnitude(t_tuple *tuple);
 float   dot(t_vector *v1, t_vector *v2);
+t_vector   *cross(t_vector *v1, t_vector *v2);
