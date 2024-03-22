@@ -82,8 +82,67 @@ MU_TEST(test_4x4_matrix_creation) {
     mu_assert_double_eq(matrix->values[3][3], 16);
 }
 
+MU_TEST(test_matrixcmp_to_different_dimensions_matrices) {
+    t_matrix *A = new_matrix(5);
+    t_matrix *B = new_matrix(3);
+    char result = matrixcmp(A, B);
+    char expected = 1;
+
+    mu_assert(expected == result, "Matrices of different dimensions should be considered different");
+}
+
+MU_TEST(test_matrixcmp_to_equal_matrices) {
+    t_matrix *A = new_matrix(2);
+    t_matrix *B = new_matrix(2);
+
+    A->values[0][0] = 1;
+    A->values[0][1] = 2;
+    A->values[1][0] = 3;
+    A->values[1][1] = 4;
+
+    B->values[0][0] = 1;
+    B->values[0][1] = 2;
+    B->values[1][0] = 3;
+    B->values[1][1] = 4;
+
+    char result = matrixcmp(A, B);
+    char expected = 0;
+
+    mu_assert(
+        expected == result,
+        "Matrix A should be equal to matrix B"
+    );
+}
+
+MU_TEST(test_matrixcmp_to_different_matrices) {
+    
+    t_matrix *A = new_matrix(2);
+    t_matrix *B = new_matrix(2);
+
+    A->values[0][0] = 1;
+    A->values[0][1] = 2;
+    A->values[1][0] = 3;
+    A->values[1][1] = 4;
+
+    B->values[0][0] = 4;
+    B->values[0][1] = 3;
+    B->values[1][0] = 2;
+    B->values[1][1] = 1;
+
+    char result = matrixcmp(A, B);
+    char expected = 1;
+
+    mu_assert(
+        expected == result,
+        "Matrix A should be different to matrix B"
+    );
+}
+
 MU_TEST_SUITE(test_matrix) {
     MU_RUN_TEST(test_2x2_matrix_creation);
     MU_RUN_TEST(test_3x3_matrix_creation);
     MU_RUN_TEST(test_4x4_matrix_creation);
+    MU_RUN_TEST(test_matrixcmp_to_different_dimensions_matrices);
+    MU_RUN_TEST(test_matrixcmp_to_equal_matrices);
+    MU_RUN_TEST(test_matrixcmp_to_different_matrices);
 }
