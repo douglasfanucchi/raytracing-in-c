@@ -1,10 +1,18 @@
 #include <stdlib.h>
 #include <math.h>
 
+#ifndef MINIRT
+# define MINIRT
+
 #define EPSILON 1E-5
 #ifndef M_PI_4
     #define M_PI_4 0.785398163397448309616
 #endif
+
+typedef struct s_matrix {
+    int dimension;
+    float **values;
+} t_matrix;
 
 typedef float t_tuple;
 typedef t_tuple t_point;
@@ -26,3 +34,6 @@ float   dot(t_vector *v1, t_vector *v2);
 t_vector   *cross(t_vector *v1, t_vector *v2);
 t_color *new_color(float red, float green, float blue);
 t_color *colorsmultiply(t_color *c1, t_color *c2);
+t_matrix *new_matrix(int dimension);
+
+#endif
