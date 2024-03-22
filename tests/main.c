@@ -9,6 +9,7 @@
 #include "tuples/dot.c"
 #include "tuples/cross.c"
 #include "tuples/color.c"
+#include "matrix/matrix.c"
 
 int	main()
 {
@@ -21,6 +22,7 @@ int	main()
 	MU_RUN_SUITE(test_dot_product);
 	MU_RUN_SUITE(test_cross_product);
 	MU_RUN_SUITE(test_colors);
+	MU_RUN_SUITE(test_matrix);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
