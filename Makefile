@@ -5,7 +5,7 @@ INCLUDES=-I ./includes/
  
 OBJS := tuples/tuple.o tuples/point.o tuples/vector.o tuples/scalar.o \
 		tuples/magnitude.o tuples/normalize.o tuples/dot.o \
-		tuples/cross.o
+		tuples/cross.o tuples/color.o
 OBJS := $(addprefix sources/, $(OBJS))
 LIBS := -lm
 

@@ -9,6 +9,7 @@
 typedef float t_tuple;
 typedef t_tuple t_point;
 typedef t_tuple t_vector;
+typedef t_tuple t_color;
 
 t_tuple *new_tuple(float x, float y, float z, float type);
 t_tuple *tupleadd(t_tuple *t1, t_tuple *t2);
@@ -23,3 +24,4 @@ char    tuplecmp(t_tuple *t1, t_tuple *t2);
 float magnitude(t_tuple *tuple);
 float   dot(t_vector *v1, t_vector *v2);
 t_vector   *cross(t_vector *v1, t_vector *v2);
+t_color *new_color(float red, float green, float blue);
