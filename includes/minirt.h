@@ -38,5 +38,6 @@ t_matrix *new_matrix(int dimension);
 char    matrixcmp(t_matrix *A, t_matrix *B);
 t_matrix    *matricesmultiply(t_matrix *A, t_matrix *B);
 t_tuple     *matrixtuplemultiply(t_matrix *A, t_tuple *tuple);
+t_matrix    *new_identity();
 
 #endif

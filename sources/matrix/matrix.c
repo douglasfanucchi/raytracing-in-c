@@ -84,3 +84,28 @@ t_tuple *matrixtuplemultiply(t_matrix *A, t_tuple *tuple)
     }
     return result;
 }
+
+t_matrix *new_identity()
+{
+    t_matrix *result;
+    int      i;
+    int      j;
+    int      dimension;
+
+    dimension = 4;
+    i = 0;
+    result = new_matrix(dimension);
+    while (i < dimension)
+    {
+        j = 0;
+        while (j < dimension)
+        {
+            result->values[i][j] = 0;
+            if (i == j)
+                result->values[i][j] = 1;
+            j++;
+        }
+        i++;
+    }
+    return result;
+}
