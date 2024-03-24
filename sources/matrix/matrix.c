@@ -66,3 +66,21 @@ t_matrix *matricesmultiply(t_matrix *A, t_matrix *B)
     }
     return result;
 }
+
+t_tuple *matrixtuplemultiply(t_matrix *A, t_tuple *tuple)
+{
+    int     i;
+    t_tuple *result;
+
+    i = 0;
+    result = new_tuple(0, 0, 0, 0);
+    while (i < A->dimension)
+    {
+        result[i] = A->values[i][0] * tuple[0];
+        result[i] += A->values[i][1] * tuple[1];
+        result[i] += A->values[i][2] * tuple[2];
+        result[i] += A->values[i][3] * tuple[3];
+        i++;
+    }
+    return result;
+}
