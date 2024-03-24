@@ -109,3 +109,24 @@ t_matrix *new_identity()
     }
     return result;
 }
+
+t_matrix    *transpose(t_matrix *A)
+{
+    t_matrix *result;
+    int      i;
+    int      j;
+
+    result = new_matrix(A->dimension);
+    i = 0;
+    while (i < A->dimension)
+    {
+        j = 0;
+        while (j < A->dimension)
+        {
+            result->values[j][i] = A->values[i][j];
+            j++;
+        }
+        i++;
+    }
+    return result;
+}
