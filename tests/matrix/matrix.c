@@ -260,6 +260,51 @@ MU_TEST(test_identity_matrix_creation) {
     );
 }
 
+MU_TEST(test_transpose_matrix) {
+    t_matrix *A = new_matrix(4);
+
+    A->values[0][0] = 1;
+    A->values[0][1] = 2;
+    A->values[0][2] = 3;
+    A->values[0][3] = 4;
+    A->values[1][0] = 5;
+    A->values[1][1] = 6;
+    A->values[1][2] = 7;
+    A->values[1][3] = 8;
+    A->values[2][0] = 9;
+    A->values[2][1] = 10;
+    A->values[2][2] = 11;
+    A->values[2][3] = 12;
+    A->values[3][0] = 13;
+    A->values[3][1] = 14;
+    A->values[3][2] = 15;
+    A->values[3][3] = 16;
+
+    t_matrix *result = transpose(A);
+    t_matrix *expected = new_matrix(4);
+    expected->values[0][0] = 1;
+    expected->values[0][1] = 5;
+    expected->values[0][2] = 9;
+    expected->values[0][3] = 13;
+    expected->values[1][0] = 2;
+    expected->values[1][1] = 6;
+    expected->values[1][2] = 10;
+    expected->values[1][3] = 14;
+    expected->values[2][0] = 3;
+    expected->values[2][1] = 7;
+    expected->values[2][2] = 11;
+    expected->values[2][3] = 15;
+    expected->values[3][0] = 4;
+    expected->values[3][1] = 8;
+    expected->values[3][2] = 12;
+    expected->values[3][3] = 16;
+
+    mu_assert(
+        matrixcmp(expected, result) == 0,
+        "Result matrix should be equal to expected matrix."
+    );
+}
+
 MU_TEST_SUITE(test_matrix) {
     MU_RUN_TEST(test_2x2_matrix_creation);
     MU_RUN_TEST(test_3x3_matrix_creation);
@@ -270,4 +315,5 @@ MU_TEST_SUITE(test_matrix) {
     MU_RUN_TEST(test_multiply_matrices);
     MU_RUN_TEST(test_multiply_matrices_by_a_tuple);
     MU_RUN_TEST(test_identity_matrix_creation);
+    MU_RUN_TEST(test_transpose_matrix);
 }
