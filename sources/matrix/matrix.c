@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <minirt.h>
 
 t_matrix *new_matrix(int dimension)
