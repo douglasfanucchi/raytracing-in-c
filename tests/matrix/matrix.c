@@ -232,6 +232,34 @@ MU_TEST(test_multiply_matrices_by_a_tuple) {
     );
 }
 
+MU_TEST(test_identity_matrix_creation) {
+    t_matrix *expected = new_matrix(4);
+
+    expected->values[0][0] = 1;
+    expected->values[0][1] = 0;
+    expected->values[0][2] = 0;
+    expected->values[0][3] = 0;
+    expected->values[1][0] = 0;
+    expected->values[1][1] = 1;
+    expected->values[1][2] = 0;
+    expected->values[1][3] = 0;
+    expected->values[2][0] = 0;
+    expected->values[2][1] = 0;
+    expected->values[2][2] = 1;
+    expected->values[2][3] = 0;
+    expected->values[3][0] = 0;
+    expected->values[3][1] = 0;
+    expected->values[3][2] = 0;
+    expected->values[3][3] = 1;
+
+    t_matrix *result = new_identity();
+
+    mu_assert(
+        matrixcmp(expected, result) == 0,
+        "Result matrix should be equal to identity matrix"
+    );
+}
+
 MU_TEST_SUITE(test_matrix) {
     MU_RUN_TEST(test_2x2_matrix_creation);
     MU_RUN_TEST(test_3x3_matrix_creation);
@@ -241,4 +269,5 @@ MU_TEST_SUITE(test_matrix) {
     MU_RUN_TEST(test_matrixcmp_to_different_matrices);
     MU_RUN_TEST(test_multiply_matrices);
     MU_RUN_TEST(test_multiply_matrices_by_a_tuple);
+    MU_RUN_TEST(test_identity_matrix_creation);
 }
