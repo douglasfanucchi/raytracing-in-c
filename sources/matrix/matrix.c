@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <minirt.h>
 
 t_matrix *new_matrix(int dimension)
@@ -39,4 +40,30 @@ char matrixcmp(t_matrix *A, t_matrix *B)
         i++;
     }
     return 0;
+}
+
+t_matrix *matricesmultiply(t_matrix *A, t_matrix *B)
+{
+    t_matrix *result;
+    int      i;
+    int      j;
+    int      dimension;
+
+    dimension = A->dimension;
+    result = new_matrix(dimension);
+    i = 0;
+    while (i < dimension)
+    {
+        j = 0;
+        while (j < dimension)
+        {
+            result->values[i][j] = A->values[i][0] * B->values[0][j]; 
+            result->values[i][j] += A->values[i][1] * B->values[1][j]; 
+            result->values[i][j] += A->values[i][2] * B->values[2][j]; 
+            result->values[i][j] += A->values[i][3] * B->values[3][j]; 
+            j++;
+        }
+        i++;
+    }
+    return result;
 }

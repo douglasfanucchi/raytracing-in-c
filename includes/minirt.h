@@ -36,5 +36,6 @@ t_color *new_color(float red, float green, float blue);
 t_color *colorsmultiply(t_color *c1, t_color *c2);
 t_matrix *new_matrix(int dimension);
 char    matrixcmp(t_matrix *A, t_matrix *B);
+t_matrix    *matricesmultiply(t_matrix *A, t_matrix *B);
 
 #endif
