@@ -11,6 +11,7 @@
 #include "tuples/color.c"
 #include "matrix/matrix.c"
 #include "matrix/determinant.c"
+#include "matrix/submatrix.c"
 
 int	main()
 {
@@ -25,6 +26,7 @@ int	main()
 	MU_RUN_SUITE(test_colors);
 	MU_RUN_SUITE(test_matrix);
 	MU_RUN_SUITE(test_determinant);
+	MU_RUN_SUITE(test_submatrix);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
