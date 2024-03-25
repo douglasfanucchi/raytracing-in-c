@@ -3,9 +3,11 @@
 float minor(t_matrix *A, int row, int column)
 {
     t_matrix *sub;
+    float    result;
 
     sub = submatrix(A, row, column);
-    free(A->values);
-    free(A);
-    return determinant(sub);
+    result = determinant(sub);
+    free(sub->values);
+    free(sub);
+    return result;
 }
