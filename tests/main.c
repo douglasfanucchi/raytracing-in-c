@@ -13,6 +13,7 @@
 #include "matrix/determinant.c"
 #include "matrix/submatrix.c"
 #include "matrix/minor.c"
+#include "matrix/cofactor.c"
 
 int	main()
 {
@@ -29,6 +30,7 @@ int	main()
 	MU_RUN_SUITE(test_determinant);
 	MU_RUN_SUITE(test_submatrix);
 	MU_RUN_SUITE(test_minor);
+	MU_RUN_SUITE(test_cofactor);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
