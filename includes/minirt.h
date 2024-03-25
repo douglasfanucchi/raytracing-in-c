@@ -44,5 +44,6 @@ float       determinant(t_matrix *A);
 t_matrix    *submatrix(t_matrix *A, int row, int column);
 float       minor(t_matrix *A, int row, int column);
 float       cofactor(t_matrix *A, int row, int column);
+char        is_invertible(t_matrix *A);
 
 #endif
