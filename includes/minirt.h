@@ -41,5 +41,6 @@ t_tuple     *matrixtuplemultiply(t_matrix *A, t_tuple *tuple);
 t_matrix    *new_identity();
 t_matrix    *transpose(t_matrix *A);
 float       determinant(t_matrix *A);
+t_matrix    *submatrix(t_matrix *A, int row, int column);
 
 #endif
