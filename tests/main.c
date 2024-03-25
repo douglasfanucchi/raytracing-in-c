@@ -12,6 +12,7 @@
 #include "matrix/matrix.c"
 #include "matrix/determinant.c"
 #include "matrix/submatrix.c"
+#include "matrix/minor.c"
 
 int	main()
 {
@@ -27,6 +28,7 @@ int	main()
 	MU_RUN_SUITE(test_matrix);
 	MU_RUN_SUITE(test_determinant);
 	MU_RUN_SUITE(test_submatrix);
+	MU_RUN_SUITE(test_minor);
 	MU_REPORT();
 	return MU_EXIT_CODE;
 }
