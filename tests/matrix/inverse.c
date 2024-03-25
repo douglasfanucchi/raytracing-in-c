@@ -69,7 +69,57 @@ MU_TEST(test_inverse_4x4_matrix) {
     );
 }
 
+MU_TEST(test_finding_multiplied_matrix) {
+    t_matrix *A = new_matrix(4);
+    t_matrix *B = new_matrix(4);
+
+    A->values[0][0] = 3;
+    A->values[0][1] = -9;
+    A->values[0][2] = 7;
+    A->values[0][3] = 3;
+    A->values[1][0] = 3;
+    A->values[1][1] = -8;
+    A->values[1][2] = 2;
+    A->values[1][3] = -9;
+    A->values[2][0] = -4;
+    A->values[2][1] = 4;
+    A->values[2][2] = 4;
+    A->values[2][3] = 1;
+    A->values[3][0] = -6;
+    A->values[3][1] = 5;
+    A->values[3][2] = -1;
+    A->values[3][3] = 1;
+
+    B->values[0][0] = 8;
+    B->values[0][1] = 2;
+    B->values[0][2] = 2;
+    B->values[0][3] = 2;
+    B->values[1][0] = 3;
+    B->values[1][1] = -1;
+    B->values[1][2] = 7;
+    B->values[1][3] = 0;
+    B->values[2][0] = 7;
+    B->values[2][1] = 0;
+    B->values[2][2] = 5;
+    B->values[2][3] = 4;
+    B->values[3][0] = 6;
+    B->values[3][1] = -2;
+    B->values[3][2] = 0;
+    B->values[3][3] = 5;
+
+
+    t_matrix *C = matricesmultiply(A, B);
+    t_matrix *inverseB = inverse(B);
+    t_matrix *result = matricesmultiply(C, inverseB);
+
+    mu_assert(
+        matrixcmp(A, result) == 0,
+        "Result matrix should give me B matrix"
+    );
+}
+
 MU_TEST_SUITE(test_inverse_matrix) {
     MU_RUN_TEST(test_is_invertible);
     MU_RUN_TEST(test_inverse_4x4_matrix);
+    MU_RUN_TEST(test_finding_multiplied_matrix);
 }

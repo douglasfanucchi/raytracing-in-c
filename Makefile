@@ -17,10 +17,10 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) $(INCLUDES) $< -c -o $@
+	$(CC) -g $(FLAGS) $(INCLUDES) $< -c -o $@
 
 tests: $(OBJS)
-	@$(CC) $(INCLUDES) -I ./tests/ $(OBJS) ./tests/main.c $(LIBS) -o test.out
+	@$(CC) $(INCLUDES) -g -I ./tests/ $(OBJS) ./tests/main.c $(LIBS) -o test.out
 	@./test.out
 
 .PHONY: tests
