@@ -15,6 +15,7 @@
 #include "matrix/minor.c"
 #include "matrix/cofactor.c"
 #include "matrix/inverse.c"
+#include "transform/translate.c"
 
 int	main()
 {
@@ -33,6 +34,8 @@ int	main()
 	MU_RUN_SUITE(test_minor);
 	MU_RUN_SUITE(test_cofactor);
 	MU_RUN_SUITE(test_inverse_matrix);
+	MU_RUN_SUITE(test_translate_matrix);
 	MU_REPORT();
+
 	return MU_EXIT_CODE;
 }
