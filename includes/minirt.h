@@ -47,5 +47,6 @@ float       cofactor(t_matrix *A, int row, int column);
 char        is_invertible(t_matrix *A);
 t_matrix    *inverse(t_matrix *A);
 t_matrix    *translate(float x, float y, float z);
+t_matrix    *scale(float x, float y, float z);
 
 #endif
