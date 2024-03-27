@@ -9,6 +9,10 @@
     #define M_PI_4 0.785398163397448309616
 #endif
 
+#ifndef M_PI_2
+    #define M_PI_2 M_PI_4*2
+#endif
+
 typedef struct s_matrix {
     int dimension;
     float **values;
@@ -48,5 +52,6 @@ char        is_invertible(t_matrix *A);
 t_matrix    *inverse(t_matrix *A);
 t_matrix    *translate(float x, float y, float z);
 t_matrix    *scale(float x, float y, float z);
+t_matrix    *rotatex(float angle);
 
 #endif
