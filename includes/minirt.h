@@ -53,5 +53,6 @@ t_matrix    *inverse(t_matrix *A);
 t_matrix    *translate(float x, float y, float z);
 t_matrix    *scale(float x, float y, float z);
 t_matrix    *rotatex(float angle);
+t_matrix    *rotatey(float angle);
 
 #endif
