@@ -55,5 +55,6 @@ t_matrix    *scale(float x, float y, float z);
 t_matrix    *rotatex(float angle);
 t_matrix    *rotatey(float angle);
 t_matrix    *rotatez(float angle);
+t_matrix    *skew(float xy, float xz, float yx, float yz, float zx, float zy);
 
 #endif
