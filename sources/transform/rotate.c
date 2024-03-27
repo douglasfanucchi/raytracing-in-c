@@ -25,3 +25,15 @@ t_matrix *rotatey(float angle)
     result->values[2][2] = cos(angle);
     return result;
 }
+
+t_matrix *rotatez(float angle)
+{
+    t_matrix    *result;
+
+    result = new_identity();
+    result->values[0][0] = cos(angle);
+    result->values[0][1] = -sin(angle);
+    result->values[1][0] = sin(angle);
+    result->values[1][1] = cos(angle);
+    return result;
+}
