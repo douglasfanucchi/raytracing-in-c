@@ -17,6 +17,7 @@
 #include "matrix/inverse.c"
 #include "transform/translate.c"
 #include "transform/scale.c"
+#include "transform/rotate.c"
 
 int	main()
 {
@@ -37,6 +38,7 @@ int	main()
 	MU_RUN_SUITE(test_inverse_matrix);
 	MU_RUN_SUITE(test_translate_matrix);
 	MU_RUN_SUITE(test_scale_matrix);
+	MU_RUN_SUITE(test_rotate_matrices);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;
