@@ -7,7 +7,7 @@ OBJS := tuples/tuple.o tuples/point.o tuples/vector.o tuples/scalar.o \
 		tuples/magnitude.o tuples/normalize.o tuples/dot.o \
 		tuples/cross.o tuples/color.o matrix/matrix.o matrix/determinant.o \
 		matrix/submatrix.o matrix/minor.c matrix/cofactor.c \
-		matrix/inverse.o
+		matrix/inverse.o transform/translate.o
 OBJS := $(addprefix sources/, $(OBJS))
 LIBS := -lm
 
