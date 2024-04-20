@@ -63,5 +63,6 @@ t_matrix    *rotatey(float angle);
 t_matrix    *rotatez(float angle);
 t_matrix    *skew(float xy, float xz, float yx, float yz, float zx, float zy);
 t_ray       *new_ray(t_point *origin, t_vector *direction);
+t_point     *position(t_ray *ray, float scalar);
 
 #endif
