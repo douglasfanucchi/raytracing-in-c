@@ -20,6 +20,7 @@
 #include "transform/rotate.c"
 #include "transform/skew.c"
 #include "ray/ray.c"
+#include "objects/sphere.c"
 
 int	main()
 {
@@ -43,6 +44,7 @@ int	main()
 	MU_RUN_SUITE(test_rotate_matrices);
 	MU_RUN_SUITE(test_skew_matrix);
 	MU_RUN_SUITE(test_ray);
+	MU_RUN_SUITE(test_sphere);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;

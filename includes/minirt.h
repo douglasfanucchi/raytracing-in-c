@@ -29,6 +29,11 @@ typedef struct s_ray {
     t_vector *direction;
 } t_ray;
 
+typedef struct s_sphere {
+    t_point *origin;
+    float radius;
+} t_sphere;
+
 t_tuple *new_tuple(float x, float y, float z, float type);
 t_tuple *tupleadd(t_tuple *t1, t_tuple *t2);
 t_tuple *tuplesub(t_tuple *t1, t_tuple *t2);
@@ -64,5 +69,6 @@ t_matrix    *rotatez(float angle);
 t_matrix    *skew(float xy, float xz, float yx, float yz, float zx, float zy);
 t_ray       *new_ray(t_point *origin, t_vector *direction);
 t_point     *position(t_ray *ray, float scalar);
+t_sphere    *new_sphere(t_point *origin, float radius);
 
 #endif
