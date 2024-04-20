@@ -24,6 +24,11 @@ typedef t_tuple t_point;
 typedef t_tuple t_vector;
 typedef t_tuple t_color;
 
+typedef struct s_ray {
+    t_point *origin;
+    t_vector *direction;
+} t_ray;
+
 t_tuple *new_tuple(float x, float y, float z, float type);
 t_tuple *tupleadd(t_tuple *t1, t_tuple *t2);
 t_tuple *tuplesub(t_tuple *t1, t_tuple *t2);
@@ -57,5 +62,6 @@ t_matrix    *rotatex(float angle);
 t_matrix    *rotatey(float angle);
 t_matrix    *rotatez(float angle);
 t_matrix    *skew(float xy, float xz, float yx, float yz, float zx, float zy);
+t_ray       *new_ray(t_point *origin, t_vector *direction);
 
 #endif
