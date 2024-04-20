@@ -19,6 +19,7 @@
 #include "transform/scale.c"
 #include "transform/rotate.c"
 #include "transform/skew.c"
+#include "ray/ray.c"
 
 int	main()
 {
@@ -41,6 +42,7 @@ int	main()
 	MU_RUN_SUITE(test_scale_matrix);
 	MU_RUN_SUITE(test_rotate_matrices);
 	MU_RUN_SUITE(test_skew_matrix);
+	MU_RUN_SUITE(test_ray);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;
