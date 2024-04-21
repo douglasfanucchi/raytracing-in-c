@@ -22,6 +22,7 @@
 #include "ray/ray.c"
 #include "objects/sphere.c"
 #include "ray/intersections.c"
+#include "ray/hit.c"
 
 int	main()
 {
@@ -47,6 +48,7 @@ int	main()
 	MU_RUN_SUITE(test_ray);
 	MU_RUN_SUITE(test_sphere);
 	MU_RUN_SUITE(test_intersections);
+	MU_RUN_SUITE(test_hit);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;

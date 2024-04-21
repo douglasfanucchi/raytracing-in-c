@@ -78,5 +78,6 @@ t_point     *position(t_ray *ray, float scalar);
 t_sphere    *new_sphere(t_point *origin, float radius);
 t_intersection *new_intersection(float t, void *object);
 t_list      **intersect(void *object, t_ray *ray);
+t_intersection *hit(t_list **intersections);
 
 #endif
