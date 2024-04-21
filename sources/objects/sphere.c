@@ -7,7 +7,7 @@ t_sphere *new_sphere(t_point *origin, float radius)
     sphere = malloc(sizeof(t_sphere));
     sphere->origin = origin;
     sphere->radius = radius;
-
+    sphere->transform = new_identity();
     return (sphere);
 }
 
