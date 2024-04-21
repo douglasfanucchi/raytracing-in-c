@@ -20,10 +20,10 @@ t_list  **intersect(void *object, t_ray *ray)
     float           c;
 
     list = ft_newlist();
-    sphere_to_ray = tuplesub(ray->origin, ((t_sphere *)object)->origin);
+    sphere_to_ray = new_vector(ray->origin[0], ray->origin[1], ray->origin[2]);
     a = dot(ray->direction, ray->direction);
     b = dot(sphere_to_ray, ray->direction);
-    c = dot(sphere_to_ray, sphere_to_ray) - pow(((t_sphere *)object)->radius, 2);
+    c = dot(sphere_to_ray, sphere_to_ray) - 1;
     discriminant = pow(b, 2) - a*c;
     if (!(discriminant < 0)) {
         ft_lstadd_back(
