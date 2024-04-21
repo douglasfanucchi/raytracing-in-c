@@ -21,6 +21,7 @@
 #include "transform/skew.c"
 #include "ray/ray.c"
 #include "objects/sphere.c"
+#include "ray/intersections.c"
 
 int	main()
 {
@@ -45,6 +46,7 @@ int	main()
 	MU_RUN_SUITE(test_skew_matrix);
 	MU_RUN_SUITE(test_ray);
 	MU_RUN_SUITE(test_sphere);
+	MU_RUN_SUITE(test_intersections);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;
