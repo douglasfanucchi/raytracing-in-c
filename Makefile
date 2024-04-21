@@ -1,7 +1,7 @@
 NAME=miniRT
 CC=cc
 FLAGS=-Wall -Wextra -Werror
-INCLUDES=-I ./includes/ -I lib/minilibx
+INCLUDES=-I ./includes/ -I lib/minilibx -Ilib/libft
  
 OBJS := tuples/tuple.o tuples/point.o tuples/vector.o tuples/scalar.o \
 		tuples/magnitude.o tuples/normalize.o tuples/dot.o \
@@ -10,7 +10,7 @@ OBJS := tuples/tuple.o tuples/point.o tuples/vector.o tuples/scalar.o \
 		matrix/inverse.o transform/translate.o transform/scale.o transform/rotate.o \
 		transform/skew.o ray/ray.o objects/sphere.o ray/intersections.o
 OBJS := $(addprefix sources/, $(OBJS))
-LIBS := -lm -Llib/minilibx -lmlx_Linux -lmlx -lXext -lX11
+LIBS := -lm -Llib/libft -lft -Llib/minilibx -lmlx_Linux -lmlx -lXext -lX11
 
 all: $(NAME)
 
