@@ -19,6 +19,7 @@ t_list  **intersect(void *object, t_ray *ray)
     float           b;
     float           c;
 
+    ray = transform(ray, inverse(((t_sphere *)object)->transform));
     list = ft_newlist();
     sphere_to_ray = new_vector(ray->origin[0], ray->origin[1], ray->origin[2]);
     a = dot(ray->direction, ray->direction);
