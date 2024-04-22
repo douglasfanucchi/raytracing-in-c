@@ -87,5 +87,6 @@ t_intersection *hit(t_list **intersections);
 t_ray       *transform(t_ray *ray, t_matrix *matrix);
 void        set_transform(void *object, t_matrix *matrix);
 t_vector    *normal_at(t_sphere *sphere, t_point *point);
+t_vector    *reflect(t_vector *in, t_vector *normal);
 
 #endif
