@@ -1,13 +1,9 @@
 #include <stdio.h>
 #include <minirt.h>
 
-float *points(int x, int y)
+float   f(float x)
 {
-    float *result = malloc(sizeof(float) * 3);
-    result[0] = 800/2 + x;
-    result[1] = 600/2 - y;
-    result[2] = 0;
-    return result;
+    return x/300 - 1;
 }
 
 int main()
@@ -16,19 +12,29 @@ int main()
     void *window;
 
     mlx = mlx_init();
-    window = mlx_new_window(mlx, 800, 600, "alo biel");
+    window = mlx_new_window(mlx, 600, 600, "alo biel");
 
-    int color = 0xFFFFFF;
-    t_matrix *transformation = rotatez(M_PI_2/300);
+    int         color = 0xFF0000;
+    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    set_transform(sphere, translate(0, 0, 1.5));
 
-    t_point *p = new_point(0, 300, 0);
-    for(int i = 0; i < 1200; i++) {
-        float *coordinates = points(p[0], p[1]);
-        printf("%f %f\n", p[0], p[1]);
-        mlx_pixel_put(mlx, window, coordinates[0], coordinates[1], color);
-        p = matrixtuplemultiply(transformation, p);
+    for(int i = 0; i <= 600; i++) {
+        for(int j = 0; j <= 600; j++) {
+            float x = f(i);
+            float y = -f(j);
+            float z = 1;
+
+            t_ray   *ray = new_ray(
+                new_point(0, 0, 0),
+                normalize(new_vector(x, y, z))
+            );
+            t_list **intersections = intersect(sphere, ray);
+            if(ft_lstsize(*intersections) > 0) {
+                t_intersection *intersection = hit(intersections);
+                mlx_pixel_put(mlx, window, i, j, color / intersection->t);
+            }
+        }
     }
-
     mlx_loop(mlx);
     return 0;
 }
