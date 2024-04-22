@@ -15,6 +15,10 @@
     #define M_PI_2 M_PI_4*2
 #endif
 
+#ifndef M_PI
+    #define M_PI M_PI_2*2
+#endif
+
 typedef struct s_matrix {
     int dimension;
     float **values;
@@ -82,5 +86,6 @@ t_list      **intersect(void *object, t_ray *ray);
 t_intersection *hit(t_list **intersections);
 t_ray       *transform(t_ray *ray, t_matrix *matrix);
 void        set_transform(void *object, t_matrix *matrix);
+t_vector    *normal_at(t_sphere *sphere, t_point *point);
 
 #endif

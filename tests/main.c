@@ -24,6 +24,7 @@
 #include "ray/intersections.c"
 #include "ray/hit.c"
 #include "ray/transform.c"
+#include "tuples/normal_at.c"
 
 int	main()
 {
@@ -51,6 +52,7 @@ int	main()
 	MU_RUN_SUITE(test_intersections);
 	MU_RUN_SUITE(test_hit);
 	MU_RUN_SUITE(test_transform_rays);
+	MU_RUN_SUITE(test_normal_computation);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;
