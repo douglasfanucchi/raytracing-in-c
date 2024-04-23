@@ -10,8 +10,7 @@ MU_TEST(test_should_reflect_a_vector_that_hits_with_45_degrees_the_normal) {
     );
 }
 
-MU_TEST(test_vector_should_be_horizontally_reflected_if_normal_45_degrees_slanted)
-{
+MU_TEST(test_vector_should_be_horizontally_reflected_if_normal_45_degrees_slanted) {
     t_vector    *vector = new_vector(0, -1, 0);
     t_vector    *normal = new_vector(sqrt(2)/2, sqrt(2)/2, 0);
     t_vector    *result = reflect(vector, normal);

@@ -45,6 +45,11 @@ typedef struct s_intersection {
     float t;
 } t_intersection;
 
+typedef struct s_light {
+    t_color *intensity;
+    t_point *position;
+} t_light;
+
 t_tuple *new_tuple(float x, float y, float z, float type);
 t_tuple *tupleadd(t_tuple *t1, t_tuple *t2);
 t_tuple *tuplesub(t_tuple *t1, t_tuple *t2);
@@ -88,5 +93,7 @@ t_ray       *transform(t_ray *ray, t_matrix *matrix);
 void        set_transform(void *object, t_matrix *matrix);
 t_vector    *normal_at(t_sphere *sphere, t_point *point);
 t_vector    *reflect(t_vector *in, t_vector *normal);
+t_light     *new_light(t_color *color, t_point *position);
+void        free_light(t_light *light);
 
 #endif
