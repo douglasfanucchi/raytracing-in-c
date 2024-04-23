@@ -35,8 +35,6 @@ typedef struct s_ray {
 } t_ray;
 
 typedef struct s_sphere {
-    t_point *origin;
-    float radius;
     t_matrix    *transform;
 } t_sphere;
 
@@ -94,7 +92,7 @@ t_matrix    *rotatez(float angle);
 t_matrix    *skew(float xy, float xz, float yx, float yz, float zx, float zy);
 t_ray       *new_ray(t_point *origin, t_vector *direction);
 t_point     *position(t_ray *ray, float scalar);
-t_sphere    *new_sphere(t_point *origin, float radius);
+t_sphere    *new_sphere();
 t_intersection *new_intersection(float t, void *object);
 t_list      **intersect(void *object, t_ray *ray);
 t_intersection *hit(t_list **intersections);
