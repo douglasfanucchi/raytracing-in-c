@@ -27,6 +27,7 @@
 #include "tuples/normal_at.c"
 #include "tuples/reflect.c"
 #include "light.c"
+#include "material.c"
 
 int	main()
 {
@@ -57,6 +58,7 @@ int	main()
 	MU_RUN_SUITE(test_normal_computation);
 	MU_RUN_SUITE(test_reflect);
 	MU_RUN_SUITE(test_light);
+	MU_RUN_SUITE(test_material);
 	MU_REPORT();
 
 	return MU_EXIT_CODE;

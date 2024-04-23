@@ -50,6 +50,14 @@ typedef struct s_light {
     t_point *position;
 } t_light;
 
+typedef struct s_material {
+    t_color *color;
+    float   ambient;
+    float   diffuse;
+    float   specular;
+    float   shininess;
+} t_material;
+
 t_tuple *new_tuple(float x, float y, float z, float type);
 t_tuple *tupleadd(t_tuple *t1, t_tuple *t2);
 t_tuple *tuplesub(t_tuple *t1, t_tuple *t2);
@@ -95,5 +103,6 @@ t_vector    *normal_at(t_sphere *sphere, t_point *point);
 t_vector    *reflect(t_vector *in, t_vector *normal);
 t_light     *new_light(t_color *color, t_point *position);
 void        free_light(t_light *light);
-
+t_material  *new_material(t_color *color, float ambient, float diffuse, float specular, float shininess);
+void        free_material(t_material *material);
 #endif
