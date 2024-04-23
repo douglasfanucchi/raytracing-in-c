@@ -74,6 +74,7 @@ t_vector   *cross(t_vector *v1, t_vector *v2);
 t_color *new_color(float red, float green, float blue);
 t_color *colorsmultiply(t_color *c1, t_color *c2);
 t_matrix *new_matrix(int dimension);
+void free_matrix(t_matrix *matrix);
 char    matrixcmp(t_matrix *A, t_matrix *B);
 t_matrix    *matricesmultiply(t_matrix *A, t_matrix *B);
 t_tuple     *matrixtuplemultiply(t_matrix *A, t_tuple *tuple);

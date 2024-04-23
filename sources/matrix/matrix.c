@@ -17,6 +17,20 @@ t_matrix *new_matrix(int dimension)
     return matrix;
 }
 
+void    free_matrix(t_matrix *matrix)
+{
+    int i;
+
+    i = 0;
+    while (i < matrix->dimension)
+    {
+        free(matrix->values[i]);
+        i++;
+    }
+    free(matrix->values);
+    free(matrix);
+}
+
 char matrixcmp(t_matrix *A, t_matrix *B)
 {
     int dimension;
