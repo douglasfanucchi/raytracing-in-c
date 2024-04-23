@@ -15,8 +15,8 @@ int main()
     window = mlx_new_window(mlx, 600, 600, "alo biel");
 
     int         color = 0xFF0000;
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
-    set_transform(sphere, translate(0, 0, 1.5));
+    t_sphere    *sphere = new_sphere();
+    set_transform(sphere, translate(0, 0, 100));
 
     for(int i = 0; i <= 600; i++) {
         for(int j = 0; j <= 600; j++) {

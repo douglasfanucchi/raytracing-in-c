@@ -1,6 +1,6 @@
 MU_TEST(test_should_return_lowest_intersection) {
     t_list      **intersections = ft_newlist();
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    t_sphere    *sphere = new_sphere();
     ft_lstadd_back(
         intersections,
         ft_lstnew(new_intersection(4, sphere))
@@ -15,7 +15,7 @@ MU_TEST(test_should_return_lowest_intersection) {
 }
 
 MU_TEST(test_should_return_lowest_positive_intersection) {
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    t_sphere    *sphere = new_sphere();
     t_list      **intersections = ft_newlist();
     ft_lstadd_back(
         intersections,
@@ -31,7 +31,7 @@ MU_TEST(test_should_return_lowest_positive_intersection) {
 }
 
 MU_TEST(test_should_return_null_when_has_no_positive_intersections) {
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    t_sphere    *sphere = new_sphere();
     t_list      **intersections = ft_newlist();
     ft_lstadd_back(
         intersections,
@@ -50,7 +50,7 @@ MU_TEST(test_should_return_null_when_has_no_positive_intersections) {
 }
 
 MU_TEST(test_should_return_lowest_intersection_when_unorded_list) {
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    t_sphere    *sphere = new_sphere();
     t_list      **intersections = ft_newlist();
     ft_lstadd_back(
         intersections,

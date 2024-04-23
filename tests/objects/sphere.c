@@ -1,14 +1,7 @@
 #include <minirt.h>
 
 MU_TEST(test_sphere_creation) {
-    t_point *origin = new_point(0, 0, 0);
-    float radius = 1;
-    t_sphere *sphere = new_sphere(origin, radius);
-
-    mu_assert(
-        tuplecmp(sphere->origin, origin) == 0 && sphere->radius == radius,
-        "Sphere origin should be at (0, 0, 0) and should have a radius of 1"
-    );
+    t_sphere *sphere = new_sphere();
 
     mu_assert(
         matrixcmp(sphere->transform, new_identity()) == 0,
@@ -17,7 +10,7 @@ MU_TEST(test_sphere_creation) {
 }
 
 MU_TEST(test_should_change_transform_matrix_of_sphere) {
-    t_sphere    *sphere = new_sphere(new_point(0, 0, 0), 1);
+    t_sphere    *sphere = new_sphere();
     t_matrix    *matrix = translate(1, 2, 3);
     set_transform(sphere, matrix);
 
