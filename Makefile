@@ -10,7 +10,7 @@ OBJS := tuples/tuple.o tuples/point.o tuples/vector.o tuples/scalar.o \
 		matrix/inverse.o transform/translate.o transform/scale.o transform/rotate.o \
 		transform/skew.o ray/ray.o objects/sphere.o ray/intersections.o \
 		ray/hit.o ray/transform.o objects/transform.o tuples/normal_at.o \
-		tuples/reflect.o
+		tuples/reflect.o light.o
 OBJS := $(addprefix sources/, $(OBJS))
 LIBS := -lm -Llib/libft -lft -Llib/minilibx -lmlx_Linux -lmlx -lXext -lX11
 
