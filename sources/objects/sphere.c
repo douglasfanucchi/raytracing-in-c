@@ -12,6 +12,12 @@ t_sphere *new_sphere()
     return (sphere);
 }
 
+void set_material(t_sphere *sphere, t_material *material)
+{
+    free_material(sphere->material);
+    sphere->material = material;
+}
+
 void free_sphere(t_sphere *sphere)
 {
     free_material(sphere->material);
