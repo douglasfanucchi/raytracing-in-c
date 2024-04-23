@@ -35,7 +35,8 @@ typedef struct s_ray {
 } t_ray;
 
 typedef struct s_sphere {
-    t_matrix    *transform;
+    t_matrix            *transform;
+    struct s_material   *material;
 } t_sphere;
 
 typedef struct s_intersection {

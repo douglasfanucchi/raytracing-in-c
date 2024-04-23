@@ -2,6 +2,16 @@
 
 MU_TEST(test_sphere_creation) {
     t_sphere *sphere = new_sphere();
+    t_color  *default_color = new_color(1, 1, 1);
+
+    mu_assert(
+        tuplecmp(default_color, sphere->material->color) == 0,
+        "Sphere's default color should be (1, 1, 1)"
+    );
+    mu_assert_double_eq(0.1, sphere->material->ambient);
+    mu_assert_double_eq(0.9, sphere->material->diffuse);
+    mu_assert_double_eq(0.9, sphere->material->specular);
+    mu_assert_double_eq(200, sphere->material->shininess);
 
     mu_assert(
         matrixcmp(sphere->transform, new_identity()) == 0,
