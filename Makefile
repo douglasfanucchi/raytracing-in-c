@@ -28,4 +28,7 @@ tests: $(OBJS)
 	@$(CC) $(INCLUDES) -g -I ./tests/ $(OBJS) ./tests/main.c $(LIBS) -o test.out
 	@./test.out
 
+clean:
+	rm -rf $(OBJS)
+
 .PHONY: tests
