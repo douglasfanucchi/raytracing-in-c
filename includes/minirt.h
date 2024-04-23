@@ -105,4 +105,5 @@ t_light     *new_light(t_color *color, t_point *position);
 void        free_light(t_light *light);
 t_material  *new_material(t_color *color, float ambient, float diffuse, float specular, float shininess);
 void        free_material(t_material *material);
+void        set_material(t_sphere *sphere, t_material *material);
 #endif
